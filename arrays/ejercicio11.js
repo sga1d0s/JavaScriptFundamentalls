@@ -18,6 +18,7 @@ let arrayNum1 = [9, 7, 6];
 let arrayNum2 = [3, 8, 5];
 let arrayAddValues = [0, 0, 0, 0];
 
+// suma los dos arrays y lo guarda en un tercero
 function arrayAdd(arrayNum1, arrayNum2) {
   for (let index = arrayNum1.length - 1; index >= 0; index--) {
     let value = arrayNum1[index] + arrayNum2[index]
@@ -36,6 +37,7 @@ function arrayAdd(arrayNum1, arrayNum2) {
   return arrayAddValues;
 }
 
+// pasa los valores de una array a texto
 function passText(array) {
   let text = "";
   for (let index = 0; index < array.length; index++) {
@@ -44,6 +46,7 @@ function passText(array) {
   return text;
 }
 
+// función principal muestra resultado
 function displayResult() {
   console.log(passText(arrayNum1) + " + " + passText(arrayNum2) + " = " + passText(arrayAdd(arrayNum1, arrayNum2)));
 }
