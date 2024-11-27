@@ -15,7 +15,6 @@ function positiveArray(arrayNum1){
     }
   }
   return positiveArray; 
-
 }
 
 function orderArray(positiveArray){
