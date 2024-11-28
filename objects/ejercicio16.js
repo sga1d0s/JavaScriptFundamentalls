@@ -1,6 +1,6 @@
 // 16. Dado el siguiente array de objetos
 
-var elements = [
+let elements = [
   {
     code: 'SKI-203',
     name: 'Banana',
@@ -46,16 +46,14 @@ var elements = [
 // Si el elemento es importado mostrar por consola el código y el precio (Declarar una función para ello)
 
 function showElements() {
+  console.log("Imported elements");
   // separa por elementos del array
   for (let index = 0; index < elements.length; index++) {
     let element = elements[index]
-    // separa por objeto
-    for (let clave in element) {
-      if (element.qty < 50) {
-        console.log(`${clave}: ${element[clave]}`)
-      }
+    // muestra código y precio de elementos importados
+    if (element.imported === true) {
+      console.log(`Code : ${element.code} -> Price : ${element.price}`)
     }
-    console.log('-------------------');
   }
 }
 

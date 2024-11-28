@@ -6,8 +6,8 @@ let b = 36;
 let c = 3;
 
 function sum(a, b, c) {
-  var suma = a + b + c;
-  var media = suma / 3;
+  let suma = a + b + c;
+  let media = suma / 3;
   return console.log("La media es: " + media);
 }
 

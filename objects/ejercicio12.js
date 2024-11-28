@@ -46,10 +46,10 @@ let elements = [
 // Mostrar por consola todos los elementos ((Declarar una función para ello))
 
 function showElements() {
-  // separa por elementos del array
+  // itera el array
   for (let index = 0; index < elements.length; index++) {
     let element = elements[index]
-    // separa por objeto
+    // itera el objeto
     for (let clave in element) {
       console.log(`${clave}: ${element[clave]}`)
     }

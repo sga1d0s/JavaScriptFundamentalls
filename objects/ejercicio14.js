@@ -1,6 +1,6 @@
 // 14. Dado el siguiente array de objetos
 
-var elements = [
+let elements = [
   {
     code: 'SKI-203',
     name: 'Banana',
@@ -46,10 +46,10 @@ var elements = [
 // Mostrar por pantalla los elementos no importados ((Declarar una función para ello))
 
 function showElements() {
-  // separa por elementos del array
+  // itera el array
   for (let index = 0; index < elements.length; index++) {
     let element = elements[index]
-    // separa por objeto
+    // itera el objeto
     for (let clave in element) {
       if (element.imported === false) {
         console.log(`${clave}: ${element[clave]}`)

@@ -1,6 +1,6 @@
 // 13. Dado el siguiente array de objetos
 
-var elements = [
+let elements = [
   {
     code: 'SKI-203',
     name: 'Banana',
@@ -46,10 +46,10 @@ var elements = [
 // Mostrar por pantalla todos los elementos cuya cantidad (qty) sea menor de 50 ((Declarar una función para ello))
 
 function showElements() {
-  // separa por elementos del array
+  // itera el array
   for (let index = 0; index < elements.length; index++) {
     let element = elements[index]
-    // separa por objeto
+    // itera el objeto
     for (let clave in element) {
       if (element.qty < 50) {
         console.log(`${clave}: ${element[clave]}`)

@@ -3,7 +3,7 @@
 // y devuelva la diferencia entre ambos valores. 
 // Ejecutar la función y mostrar el resultado.
 
-// Ejemplo: var arrayNum1 = [1, 23, 34];
+// Ejemplo: let arrayNum1 = [1, 23, 34];
 // La función devolvería 34-1 = 33
 
 let arrayNum1 = [12, 23, 34, 567, 19, 57];
