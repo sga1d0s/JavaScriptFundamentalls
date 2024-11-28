@@ -50,7 +50,6 @@ const pinia = new Fruit(data[2].name, data[2].price, data[2].qty, data[2].import
 
 // c) array fruits
 let fruits = [];
-
 fruits = [banana, pomelo, pinia]
 
 // d) crear nuevo objeto
