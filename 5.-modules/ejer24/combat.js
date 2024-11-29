@@ -6,8 +6,4 @@ export function showAttr(mage) {
   console.log(`Maná: ${mage.mana}`);
   console.log(`Fuerza: ${mage.strength}`);
   console.log(`Hechizo: ${mage.spell ? mage.spell.name : "Ninguno"}`);
-  if (mage.spell) {
-    console.log(`\n  Daño del Hechizo: ${mage.spell.damage}`);
-    console.log(`  Coste de Maná: ${mage.spell.points}`);
-  }
 }

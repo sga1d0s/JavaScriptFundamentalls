@@ -1,7 +1,7 @@
 // métodos para manejar combates y mostrar atributos de mago
 
 // función combat
-function combat(attacker, defender) {
+export function combat(attacker, defender) {
 
   // calcular el daño
   const damage = attacker.level * attacker.strength + attacker.spell.damage;
@@ -14,20 +14,11 @@ function combat(attacker, defender) {
 }
 
 // función para mostrar resultados
-function showAttr(mage) {
+export function showAttr(mage) {
   console.log(`\n----------- Atributos de ${mage.name}`);
   console.log(`Nivel: ${mage.level}`);
   console.log(`Vida: ${mage.life}`);
   console.log(`Maná: ${mage.mana}`);
   console.log(`Fuerza: ${mage.strength}`);
   console.log(`Hechizo: ${mage.spell ? mage.spell.name : "Ninguno"}`);
-  if (mage.spell) {
-    console.log(`\n  Daño del Hechizo: ${mage.spell.damage}`);
-    console.log(`  Coste de Maná: ${mage.spell.points}`);
-  }
-}
-
-export{
-  combat,
-  showAttr
 }
