@@ -1,22 +1,3 @@
-// métodos para manejar combates y mostrar atributos de mago
-
-// función combat
-export function combat(attacker, defender) {
-
-  // calcular el daño
-  const damage = attacker.level * attacker.strength + attacker.spell.damage;
-
-  // ceducir la vida del defensor
-  defender.life -= damage;
-
-  // reducir el maná del atacante
-  attacker.mana -= attacker.spell.points;
-
-  console.log(`\n${attacker.name} ataca a ${defender.name} con ${attacker.spell.name}`);
-  console.log(`${defender.name} recibe ${damage} puntos de daño. Vida restante: ${defender.life}`);
-  console.log(`${attacker.name} le quedan ${attacker.mana} puntos de maná.`);
-}
-
 // función para mostrar resultados
 export function showAttr(mage) {
   console.log(`\n----------- Atributos de ${mage.name}`);

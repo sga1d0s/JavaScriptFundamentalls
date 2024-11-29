@@ -8,4 +8,16 @@ export class Mage {
     this.strength = strength;
     this.spell = null;
   }
+
+  // medoto combat
+  combat(defender) {
+    // calcular el daño
+    const damage = this.level * this.strength + this.spell.damage;
+
+    // ceducir la vida del defensor
+    defender.life -= damage;
+
+    // reducir el maná del atacante
+    this.mana -= this.spell.points;
+  }
 }
