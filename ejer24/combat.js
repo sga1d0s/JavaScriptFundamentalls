@@ -12,9 +12,9 @@ export function combat(attacker, defender) {
   // reducir el maná del atacante
   attacker.mana -= attacker.spell.points;
 
-  console.log(`\n-${attacker.name} ataca a ${defender.name} usando ${attacker.spell.name}.`);
-  console.log(`-${defender.name} recibe ${damage} puntos de daño. Vida restante: ${defender.life}.`);
-  console.log(`-Puntos de mana restantes de ${attacker.name}: ${attacker.mana}.`);
+  console.log(`\n${attacker.name} ataca a ${defender.name} con ${attacker.spell.name}`);
+  console.log(`${defender.name} recibe ${damage} puntos de daño. Vida restante: ${defender.life}`);
+  console.log(`${attacker.name} le quedan ${attacker.mana} puntos de maná.`);
 }
 
 // función para mostrar resultados
