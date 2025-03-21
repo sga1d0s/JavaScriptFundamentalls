@@ -9,4 +9,4 @@ function randomNumber(max){
   }
 }
 
-randomNumber(9)
+randomNumber(8)
