@@ -24,4 +24,4 @@ class CuentaBancaria {
 const cuenta = new CuentaBancaria(1000);
 cuenta.depositar(500);
 console.log(cuenta.obtenerSaldo()); // 1500
-console.log(cuenta.#saldo); // 🚫 Error: Propiedad privada
+console.log(cuenta.#saldo); // Error: Propiedad privada
