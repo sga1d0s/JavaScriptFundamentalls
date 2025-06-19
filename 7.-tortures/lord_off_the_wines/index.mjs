@@ -11,14 +11,13 @@ function main() {
   // crear le dado
   let hieraticDie = new Die("Hieretic")
   let gracefulDie = new Die("Graceful")
-  
-  hieraticDie.main()
-  gracefulDie.main()
+
+  // hieraticDie.main()
+  // gracefulDie.main()
 
   // test Time
-  const dayMoment = new Time(13, 23, 7)
-  let outCome = dayMoment.getTimeDay() 
-  let passBy = dayMoment.passBy(120)
+  const dayMoment = new Time(35, 12, 2)
 
-  console.log(passBy)
+  dayMoment.main()
+
 }
