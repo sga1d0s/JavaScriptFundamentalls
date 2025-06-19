@@ -1,0 +1,9 @@
+// Levels
+
+export default [
+  "The Great Swamp",
+  "The Tainted Corridors",
+  "The Spooky Castle",
+  "Skyloft",
+  "The Shattered Fortress"
+]
