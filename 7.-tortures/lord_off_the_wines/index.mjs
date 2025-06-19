@@ -3,6 +3,8 @@
 
 import Die from "./Die.mjs"
 import Time from "./Time.mjs"
+import Wine from "./Wine.mjs"
+import wines from "./wines.mjs"
 
 main()
 
@@ -19,5 +21,21 @@ function main() {
   const dayMoment = new Time(35, 12, 2)
 
   dayMoment.main()
+
+  console.log(dayMoment.getTimeDay())
+
+  // test Wine
+  Wine.main()
+
+  let wineTest = new Wine(
+    wines[1].name,
+    wines[1].points,
+    wines[1].poisonTime,
+    wines[1].effecTime,
+  )
+
+  let info = wineTest.isPoison(dayMoment.getTimeDay())
+
+  console.log(info)
 
 }
