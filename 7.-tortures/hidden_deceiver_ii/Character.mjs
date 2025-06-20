@@ -1,6 +1,7 @@
+import getRandomIndex from "./index.mjs"
 
 export default class Character {
-  constructor(name, occupation, gold, life, weapon, pouch) {
+  constructor(name, occupation, gold, life, weapon, pouch = []) {
     this.name = name
     this.occupation = occupation
     this.gold = gold
@@ -9,7 +10,7 @@ export default class Character {
     this.pouch = pouch
   }
 
-  static createCharacter(characters, weapons, preciousStones) {
+  static createCharacter(characters, weapons) {
     let charactersArray = []
 
     for (let i = 0; i < characters.length; i++) {
@@ -19,7 +20,7 @@ export default class Character {
       switch (character.occupation) {
         case "thug":
           {
-            const randomIndex = this.randomIndex(weapons.thugWeapons)
+            const randomIndex = getRandomIndex(weapons.thugWeapons)
             randomWeapon = weapons.thugWeapons[randomIndex]
             weapons.thugWeapons.splice(randomIndex, 1)
           }
@@ -27,7 +28,7 @@ export default class Character {
 
         case "priest":
           {
-            const randomIndex = this.randomIndex(weapons.priestWeapons)
+            const randomIndex = getRandomIndex(weapons.priestWeapons)
             randomWeapon = weapons.priestWeapons[randomIndex]
             weapons.priestWeapons.splice(randomIndex, 1)
           }
@@ -35,7 +36,7 @@ export default class Character {
 
         case "peasant":
           {
-            const randomIndex = this.randomIndex(weapons.peasantWeapons)
+            const randomIndex = getRandomIndex(weapons.peasantWeapons)
             randomWeapon = weapons.peasantWeapons[randomIndex]
             weapons.peasantWeapons.splice(randomIndex, 1)
           }
@@ -51,14 +52,33 @@ export default class Character {
         character.gold,
         character.life,
         randomWeapon,
-        character.pouch,
+        [],
       ))
     }
+
+    console.log(charactersArray)
+
     return charactersArray
   }
 
-  static randomIndex(array) {
-    return Math.floor(Math.random() * array.length)
+  buyStones(stones) {
+    do {
+      const randomIndex = getRandomIndex(stones)
+      const stone = stones[randomIndex];
+      this.pouch.push(stone)
+      this.gold -= stone.value
+    } while (this.leftSomeMoney(stones));
   }
 
+  leftSomeMoney(stones) {
+    let cheapetsStone = stones[0].value
+
+    for (let i = 0; i < stones.length; i++) {
+      const stone = stones[i];
+      if (stone.value < cheapetsStone) {
+        cheapetsStone = stone.value
+      }
+    }
+    return (this.gold >= cheapetsStone)
+  }
 }
