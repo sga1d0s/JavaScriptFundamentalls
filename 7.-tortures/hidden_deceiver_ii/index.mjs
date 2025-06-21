@@ -1,3 +1,6 @@
+// TORTURE - HIDDEN DECEIVER II
+// https://docs.google.com/document/d/1imiuLihASdfj9SU0CirEg72Jx5YSl1qpIrrUTDw5tfw/edit?tab=t.0
+
 import weaponsData from './data/weapons.mjs'
 import preciousStonesData from './data/preciousStones.mjs'
 import charactersData from './data/characters.mjs'
