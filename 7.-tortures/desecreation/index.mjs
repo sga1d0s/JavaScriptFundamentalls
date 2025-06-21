@@ -2,6 +2,7 @@
 // https://docs.google.com/document/d/1QM1-t8nEX64DXXaBDhm6oSkgeHyBWi-gTaQk8DMZu0s/edit?tab=t.0
 
 import Die from "./Die.mjs";
+import TrainingGround from "./TrainingGround.mjs";
 
 main();
 
@@ -14,7 +15,13 @@ async function main() {
   // crear los dados dentro de diceMap
   const diceMap = createDies();
 
-  // crear personajes
+  const char = new TrainingGround(data)
+
+  // crear heroes
+  const heroChar = char.createSuperHero()
+
+  // crear villano
+  const villainChar = char.createVillain()  
 
   // crear combate
 
