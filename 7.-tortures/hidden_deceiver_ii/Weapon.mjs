@@ -1,9 +1,9 @@
 
 export default class Weapon {
-  constructor(name, description, numDieManage, type, quality) {
+  constructor(name, description, numDieDamage, type, quality) {
     this.name = name
     this.description = description
-    this.numDieManage = numDieManage
+    this.numDieDamage = numDieDamage
     this.type = type
     this.quality = quality
   }
@@ -24,12 +24,16 @@ export default class Weapon {
 
     }
 
-    // console.log(weaponsArray)
-
     return weaponsArray
   }
 
-  selectWeapon() {
-
+  clone() {
+    return new Weapon(
+      this.name,
+      this.description,
+      this.numDieDamage,
+      this.type,
+      this.quality,
+    )
   }
 }

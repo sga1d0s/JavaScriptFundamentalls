@@ -6,22 +6,28 @@ export default class PreciousStone {
     this.value = value
   }
 
-  static createStone(stones){
+  static createStone(stones) {
     let stonesArray = []
 
     for (let i = 0; i < stones.length; i++) {
       const stone = stones[i];
-      
+
       stonesArray.push(new PreciousStone(
-        stone.name, 
+        stone.name,
         stone.description,
         stone.value
       ))
-      
+
     }
 
-    // console.log(stonesArray)
-
     return stonesArray
+  }
+
+  clone() {
+    return new PreciousStone(
+      this.name,
+      this.description,
+      this.value,
+    )
   }
 }

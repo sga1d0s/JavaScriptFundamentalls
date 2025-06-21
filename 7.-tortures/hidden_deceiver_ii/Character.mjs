@@ -1,4 +1,5 @@
 import getRandomIndex from "./index.mjs"
+import die from './die.mjs'
 
 export default class Character {
   constructor(name, occupation, gold, life, weapon, pouch = []) {
@@ -56,18 +57,20 @@ export default class Character {
       ))
     }
 
-    console.log(charactersArray)
+    // console.log(charactersArray)
 
     return charactersArray
   }
 
   buyStones(stones) {
-    do {
+    while (this.leftSomeMoney(stones)) {
       const randomIndex = getRandomIndex(stones)
       const stone = stones[randomIndex];
-      this.pouch.push(stone)
-      this.gold -= stone.value
-    } while (this.leftSomeMoney(stones));
+      if (this.gold >= stone.value) {
+        this.pouch.push(stone)
+        this.gold -= stone.value
+      }
+    }
   }
 
   leftSomeMoney(stones) {
@@ -79,6 +82,51 @@ export default class Character {
         cheapetsStone = stone.value
       }
     }
+
     return (this.gold >= cheapetsStone)
   }
+
+  attack(enemy) {
+    const n = this.weapon.numDieDamage
+
+    // daño del arma
+    let weaponDamage = this.rollTheDie(n) + 2
+
+    // restamos 
+    enemy.life -= weaponDamage
+    this.weapon.quality -= 3
+
+    return weaponDamage
+  }
+
+  rollTheDie(n) {
+    let total = 0
+    const d = die
+
+    for (let i = 0; i < n; i++) {
+      total += die[getRandomIndex(d)]
+    }
+
+    return total
+  }
+
+  clone() {
+    const clonedWeapon = this.weapon.clone()
+    const clonedPouch = []
+
+    for (let i = 0; i < this.pouch.length; i++) {
+      const stone = this.pouch[i].clone();
+      clonedPouch.push(stone)
+    }
+
+    return new Character(
+      this.name,
+      this.occupation,
+      this.gold,
+      this.life,
+      clonedWeapon,
+      clonedPouch,
+    )
+  }
+
 }
