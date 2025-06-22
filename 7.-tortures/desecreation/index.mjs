@@ -1,6 +1,7 @@
 // TORTURE - DESECREATION
 // https://docs.google.com/document/d/1QM1-t8nEX64DXXaBDhm6oSkgeHyBWi-gTaQk8DMZu0s/edit?tab=t.0
 
+import Combat from "./Combat.mjs";
 import Die from "./Die.mjs";
 import TrainingGround from "./TrainingGround.mjs";
 
@@ -8,23 +9,23 @@ main();
 
 async function main() {
 
-  // leer datos de DB
+  // ---- LEER DATOS DB
   const url = "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/all.json"
   const data = await getData(url)
 
-  // crear los dados dentro de diceMap
+  // ---- CREAR DADOS
   const diceMap = createDies();
 
+  // ---- CREAR PERSONAJES
   const char = new TrainingGround(data)
-
-  // crear heroes
+  // heroe
   const heroChar = char.createSuperHero()
+  // villano
+  const villainChar = char.createVillain()
 
-  // crear villano
-  const villainChar = char.createVillain()  
-
-  // crear combate
-
+  // ---- CREAR Y EJECUTR COMBATE
+  const combat = new Combat(heroChar, villainChar, diceMap)
+  combat.execute()
 }
 
 function createDies() {
